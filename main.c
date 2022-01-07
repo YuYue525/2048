@@ -12,7 +12,7 @@
 int score = 0;
 
 void drawTable(int score, int step, int table[4][4]){
-    system("clear");
+    system("cls");
     printf("\n2048 game board\n");
     printf("Total score: %d\n", score);
     printf("Total step: %d\n", step);
