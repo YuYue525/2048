@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <conio.h>
 int score = 0;
 
 void drawTable(int score, int step, int table[4][4]){
@@ -594,17 +595,17 @@ int userInputD(int table[4][4]){
 }
 
 void userInput(int table[4][4]){
-    int c;
+    char c;
     while(1)
     {
         printf("please enter [wsad]: ");
-        c = getchar();
-        getchar();
+        c = _getch();
+
+        if((c == 'w' && userInputW(table)==1) || (c == 's' && userInputS(table)==1) || (c == 'a' && userInputA(table)==1) || (c == 'd' && userInputD(table)==1))
+            break;
         printf("you entered: ");
         putchar(c);
         printf("\n");
-        if((c == 'w' && userInputW(table)==1) || (c == 's' && userInputS(table)==1) || (c == 'a' && userInputA(table)==1) || (c == 'd' && userInputD(table)==1))
-            break;
         printf("Wrong operation!");
     }
     
@@ -622,8 +623,7 @@ int main(int argc, const char * argv[]) {
     
     while(1)
     {
-        ch = getchar();
-        getchar();
+        ch = _getch();
         if(ch == 'q')
         {
             printf("Bye!\n");
